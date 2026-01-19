@@ -102,6 +102,20 @@ All templates are in `templates/`. Edit them directly to customize the output fo
 - [Requirements](docs/requirements.md) - What PM Speckit does
 - [Design](docs/design.md) - Architecture and command flow
 
+## Example
+
+Check out the complete example PRD in [`prds/001-ai-code-review/`](prds/001-ai-code-review/) to see all templates in action:
+
+| Document | Description |
+|----------|-------------|
+| [feature-overview.md](prds/001-ai-code-review/feature-overview.md) | Lightweight PRD for scoping |
+| [prd.md](prds/001-ai-code-review/prd.md) | Full PRD with requirements |
+| [clarifications.md](prds/001-ai-code-review/clarifications.md) | Q&A session log |
+| [ado-workitems.md](prds/001-ai-code-review/ado-workitems.md) | Azure DevOps work items |
+| [documentation.md](prds/001-ai-code-review/documentation.md) | User documentation |
+| [blog.md](prds/001-ai-code-review/blog.md) | Announcement blog post |
+| [demo-script.md](prds/001-ai-code-review/demo-script.md) | Demo talking points |
+
 ## Contributing
 
 1. Update `docs/requirements.md` with new capability
