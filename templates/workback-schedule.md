@@ -31,7 +31,7 @@
 [Launch Date - X weeks]           [Launch Date]
         ↓                               ↓
 [Design] → [Dev] → [Testing] → [Staging] → [Launch]
-   2w        4w        2w          1w         •
+   Xw        Xw        Xw          Xw         •
 ```
 
 ---
@@ -358,6 +358,8 @@ This workback schedule integrates with:
 - **PRD**: [./prd.md](./prd.md) - Source requirements and success criteria
 - **Work Items**: [./ado-workitems.md](./ado-workitems.md) - Detailed task breakdown
 - **Launch Checklist**: [../../templates/checklists/launch-readiness.md](../../templates/checklists/launch-readiness.md) - Pre-launch verification
+  
+  > Note: This assumes the workback schedule is located at `prds/[###-feature-name]/workback-schedule.md`
 
 ---
 

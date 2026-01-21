@@ -91,7 +91,7 @@ $ARGUMENTS
          ↓
 ┌─────────────────┐
 │  /pm.workback   │ → Generates workback-schedule.md
-└────────┬────────┘
+└────────┬────────┘    (Uses work items to estimate timeline)
          ↓
 ┌─────────────────┐
 │   /pm.analyze   │ ← Consistency validation (READ-ONLY)
