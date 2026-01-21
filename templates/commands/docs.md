@@ -119,3 +119,11 @@ I've marked 3 sections as [TODO] that need your input:
 3. [TODO: Add video tutorial link]
 
 Would you like me to also generate a blog post (`/pm.blog`) or demo script (`/pm.demo`)?"
+
+## Next Steps
+
+Always conclude with contextual next steps:
+
+- **If documentation created successfully** → "Consider `/pm.blog` for an announcement post, or `/pm.demo` for a demo script"
+- **If [TODO] placeholders remain** → "Complete the placeholders (screenshots, links, etc.) before publishing"
+- **If no PRD exists yet** → "Run `/pm.prd` first to create the source PRD, then return to `/pm.docs`"

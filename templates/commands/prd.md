@@ -127,3 +127,13 @@ I'll incorporate the existing context and expand it into a complete PRD. Let me 
 Who are the primary user types for this feature?"
 
 [Continue expanding into full PRD]
+
+## Next Steps
+
+Always conclude with contextual next steps based on PRD state:
+
+- **If [NEEDS CLARIFICATION] markers remain** → "Run `/pm.clarify` to resolve open questions before proceeding"
+- **If PRD is complete** → "Run `/pm.tasks` to generate Azure DevOps work items"
+- **If ready for validation** → "Run `/pm.analyze` to check consistency and constitution alignment"
+- **If ready for independent review** → "Run `/pm.peer-review` with a different AI model for unbiased feedback"
+- **If no feature-overview exists** → "Consider starting with `/pm.specify` for initial scoping first"

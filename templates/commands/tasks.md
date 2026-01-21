@@ -136,3 +136,12 @@ EPIC-001: AI-Powered Code Review
 Does this hierarchy make sense, or would you like to adjust the grouping?"
 
 [Continue generating ado-workitems.md]
+
+## Next Steps
+
+Always conclude with contextual next steps:
+
+- **If work items generated successfully** → "Run `/pm.analyze` to validate consistency before importing to Azure DevOps"
+- **If coverage gaps found** → "Review PRD for missing requirements, then regenerate with `/pm.tasks`"
+- **After importing to ADO** → "Consider `/pm.docs` for user documentation or `/pm.demo` for demo script"
+- **If [NEEDS CLARIFICATION] warnings appeared** → "Run `/pm.clarify` first, then regenerate work items"

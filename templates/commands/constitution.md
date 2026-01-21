@@ -72,3 +72,11 @@ Use template: `memory/constitution.md`
 **Agent**: "Great vision. Now let's identify your primary user persona. Who is the main user of this product? What's their role, goals, and main pain points?"
 
 [Continue gathering context...]
+
+## Next Steps
+
+Always conclude with next steps after constitution creation:
+
+- **If constitution created successfully** → "Start your first feature with `/pm.specify` to create a feature overview"
+- **If updating existing constitution** → "Run `/pm.analyze` on existing PRDs to check alignment with updated principles"
+- **If principles are unclear** → "Revisit with stakeholders to clarify MUST vs SHOULD priorities"

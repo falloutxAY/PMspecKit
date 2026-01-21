@@ -191,3 +191,11 @@ I've included:
 - Recovery scenarios if demo breaks
 
 Review the script and customize the talking points to your style."
+
+## Next Steps
+
+Always conclude with contextual next steps:
+
+- **If demo script created successfully** → "Consider `/pm.docs` for detailed user documentation, or `/pm.blog` for an announcement post"
+- **If demo needs more scenarios** → "Review additional user stories in the PRD and expand the script"
+- **If no PRD exists yet** → "Run `/pm.prd` first to create the source PRD, then return to `/pm.demo`"

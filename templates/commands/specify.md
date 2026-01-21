@@ -96,3 +96,12 @@ What problem is this solving? Who experiences this problem and when?"
 **Agent**: "Got it. What evidence do you have for this problem? Customer feedback, internal data, research?"
 
 [Continue gathering context, then generate feature-overview.md]
+
+## Next Steps
+
+Always conclude with contextual next steps based on feature overview state:
+
+- **If [NEEDS CLARIFICATION] markers present** → "Run `/pm.clarify` to resolve open questions before expanding to full PRD"
+- **If feature overview is complete** → "Ready to expand into full PRD with `/pm.prd`"
+- **If no constitution exists** → "Consider running `/pm.constitution` first to establish product principles"
+- **If scope is unclear** → "Gather more stakeholder input before proceeding"

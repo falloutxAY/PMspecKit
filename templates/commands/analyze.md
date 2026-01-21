@@ -272,3 +272,13 @@ These sections don't block progress but surface risks and blind spots:
 ...
 
 **Recommendation**: Fix CRITICAL issue #1 before proceeding. Run `/pm.clarify` to resolve issue #2."
+
+## Next Steps
+
+Always conclude with contextual next steps based on findings:
+
+- **If CRITICAL issues found** → "Run `/pm.clarify` to resolve critical issues before proceeding"
+- **If HIGH issues found** → "Run `/pm.clarify` to address high-priority issues, then `/pm.tasks` to regenerate work items"
+- **If only MEDIUM/LOW issues** → "You can proceed. Consider `/pm.tasks` to generate work items or `/pm.docs` for documentation"
+- **If Pre-Mortem reveals high-likelihood risks** → "Consider adding mitigations to your PRD with `/pm.prd`"
+- **If analysis is clean** → "Ready for next phase: `/pm.tasks` for work items, `/pm.docs` for documentation, or `/pm.peer-review` for independent review"

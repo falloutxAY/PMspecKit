@@ -148,3 +148,13 @@ Which approach would you like to take?"
 - Recorded this decision in `clarifications.md`
 
 Now for clarification 2 of 2..."
+
+## Next Steps
+
+Always conclude with contextual next steps based on source document and status:
+
+- **If source was feature-overview.md** → "Ready to expand into full PRD with `/pm.prd`"
+- **If source was prd.md and all markers resolved** → "Ready for `/pm.tasks` to generate work items, or `/pm.analyze` to validate consistency"
+- **If more markers remain** → "Continue resolving with `/pm.clarify` or defer remaining questions"
+- **If modifying an approved document** → "Consider logging this as a formal decision with `/pm.decision`"
+- **If stakeholder input is needed** → "Pause and gather stakeholder input before continuing"

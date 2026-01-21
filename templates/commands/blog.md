@@ -98,6 +98,14 @@ $ARGUMENTS
 | PRD Section | Blog Section | Transformation |
 |-------------|--------------|----------------|
 | Problem Statement | The Challenge | Add emotional resonance, relatability |
+
+## Next Steps
+
+Always conclude with contextual next steps:
+
+- **If blog post created successfully** → "Consider `/pm.docs` to generate detailed user documentation, or `/pm.demo` to create a demo script"
+- **If [TODO] placeholders remain** → "Complete the placeholders, then consider `/pm.docs` for full documentation"
+- **If no PRD exists yet** → "Run `/pm.prd` first to create the source PRD, then return to `/pm.blog`"
 | Solution Summary | Introducing [Feature] | Simplify, focus on outcome |
 | Goals/Metrics | Benefits | Translate metrics to user value |
 | User Stories | See It in Action | Show, don't tell |

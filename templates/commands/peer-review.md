@@ -148,6 +148,16 @@ Your review style is:
 
 **Red Flags**: Fuzzy boundaries, hidden dependencies, unstated assumptions
 
+## Next Steps
+
+Always conclude with contextual next steps based on review findings:
+
+- **If Critical Gaps (❌) found** → "Address critical issues with `/pm.clarify` or `/pm.prd` before proceeding"
+- **If Needs Work (⚠️) items found** → "Revise with `/pm.prd` to update the PRD, or `/pm.specify` to revisit feature overview"
+- **If all categories Strong (✅)** → "Ready for `/pm.tasks` to generate work items and proceed to implementation"
+- **If problem clarity is weak** → "Revisit problem definition with `/pm.specify` before expanding PRD"
+- **If solution fit is questioned** → "Consider alternatives and update with `/pm.prd`"
+
 ### 5. Success Metrics 📊
 
 | Criteria | Questions to Ask |

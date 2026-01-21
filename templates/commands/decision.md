@@ -98,6 +98,16 @@ $ARGUMENTS
    - Scan for decisions with Status != Applied
    
 2. **Display pending decisions**
+
+## Next Steps
+
+Always conclude with contextual next steps based on decision state:
+
+- **If decision logged as Proposed** → "Get approval, then run `/pm.decision apply DEC-###` after updating docs"
+- **If decision logged as Approved** → "Update affected documents, then run `/pm.decision apply DEC-###` to mark as applied"
+- **If decision applied** → "Run `/pm.analyze` to validate consistency across all documents"
+- **If decision requires stakeholder input** → "Run `/pm.clarify` to gather needed information"
+- **If reviewing pending decisions** → "Address oldest pending decisions first to prevent staleness"
    ```
    ## Pending Decisions for [Feature]
    
