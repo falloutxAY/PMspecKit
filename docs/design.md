@@ -93,6 +93,10 @@ $ARGUMENTS
 │   /pm.analyze   │ ← Consistency validation (READ-ONLY)
 └────────┬────────┘
          ↓
+┌─────────────────┐
+│ /pm.peer-review │ ← Senior PM review (REQUIRES DIFFERENT AGENT)
+└────────┬────────┘
+         ↓
 ┌─────────────────────────────────────┐
 │  /pm.docs  │  /pm.blog  │  /pm.demo │ ← Supporting artifacts
 └─────────────────────────────────────┘
@@ -106,12 +110,13 @@ $ARGUMENTS
 | `/pm.specify` | Constitution (recommended) | `prds/###-name/feature-overview.md` |
 | `/pm.prd` | `feature-overview.md` | `prds/###-name/prd.md` |
 | `/pm.clarify` | Source document with `[NEEDS CLARIFICATION]` | `clarifications.md` + updates source |
+| `/pm.decision` | Any approved PRD documents | `prds/###-name/decisions.md` |
 | `/pm.tasks` | `prd.md` | `prds/###-name/ado-workitems.md` |
 | `/pm.analyze` | Any PRD documents | Console report (no files) |
+| `/pm.peer-review` | Any PRD documents + different agent | `prds/###-name/peer-review.md` |
 | `/pm.docs` | `prd.md` | `prds/###-name/documentation.md` |
 | `/pm.blog` | `prd.md` | `prds/###-name/blog.md` |
 | `/pm.demo` | `prd.md` | `prds/###-name/demo-script.md` |
-| `/pm.learn` | Any context | Console (interactive) |
 
 ---
 
@@ -123,6 +128,7 @@ $ARGUMENTS
 |----------|---------|-------------|
 | `feature-overview.md` | `/pm.specify` | `feature-overview.md` |
 | `prd.md` | `/pm.prd` | `prd.md` |
+| `decisions.md` | `/pm.decision` | `decisions.md` |
 | `ado-workitems.md` | `/pm.tasks` | `ado-workitems.md` |
 | `documentation.md` | `/pm.docs` | `documentation.md` |
 | `blog.md` | `/pm.blog` | `blog.md` |
@@ -139,6 +145,7 @@ Templates use these placeholder conventions:
 | `[NEEDS CLARIFICATION: question]` | Ambiguity marker requiring resolution |
 | `REQ-001`, `REQ-002` | Requirement IDs (auto-increment) |
 | `US-001`, `US-002` | User Story IDs (auto-increment) |
+| `DEC-001`, `DEC-002` | Decision IDs (auto-increment) |
 | `EPIC-001`, `FEAT-001`, `TASK-001` | Work item IDs |
 
 ---
@@ -236,10 +243,20 @@ Documents reference each other using relative paths:
 |-------|----------|-------------|
 | Constitution Alignment | CRITICAL | PRD violates MUST principles |
 | Unresolved Clarifications | HIGH | `[NEEDS CLARIFICATION]` markers remain |
+| Unapplied Decisions | HIGH | Approved decisions in `decisions.md` not reflected in docs |
 | Missing Work Items | HIGH | Requirements without corresponding tasks |
 | Ambiguous Language | MEDIUM | Vague terms without measurable criteria |
+| Stale Decisions | MEDIUM | Decisions in Proposed status > 7 days |
 | Duplicate Requirements | MEDIUM | Near-duplicate REQ entries |
 | Orphan Work Items | LOW | Tasks not mapped to requirements |
+
+### Advisory Sections (No Severity)
+
+| Section | Purpose |
+|---------|---------||
+| Devil's Advocate | Challenge 3 key assumptions, surface uncomfortable questions |
+| Pre-Mortem | "It failed—why?" Generate 3-5 plausible failure scenarios |
+| Stakeholder Stress Test | Evaluate from skeptical eng lead, cost-conscious exec, frustrated user |
 
 ### Output Format
 

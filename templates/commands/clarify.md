@@ -5,6 +5,8 @@ handoffs:
     prompt: Continue to full PRD now that clarifications are resolved
   - agent: /pm.tasks
     prompt: Generate Azure DevOps work items now that clarifications are resolved
+  - agent: /pm.decision
+    prompt: Log clarification as a decision if it modifies approved content
 ---
 
 # /pm.clarify
@@ -48,6 +50,12 @@ $ARGUMENTS
 7. **Suggest next steps**
    - If source was feature-overview: suggest `/pm.prd`
    - If source was prd.md: suggest `/pm.tasks` or `/pm.analyze`
+
+8. **Check if decision logging needed**
+   - If the source document was already in "Approved" or "In Development" status:
+     - Prompt: "This clarification modifies an approved document. Would you like to log this as a formal decision?"
+     - If yes: hand off to `/pm.decision` with pre-filled context
+   - This ensures post-approval clarifications are tracked in `decisions.md`
 
 ## Rules
 

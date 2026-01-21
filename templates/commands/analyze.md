@@ -28,7 +28,8 @@ $ARGUMENTS
    - Scan PRD for violations of MUST principles
    - Check for conflicts with AVOID principles
    - Report: CRITICAL for MUST violations, HIGH for AVOID violations
-
+   - Check git diff or recent modified files and make sure to update all relevant files to align with the changes. 
+  
 4. **Check for unresolved clarifications**
    - Scan all documents for `[NEEDS CLARIFICATION]` markers
    - Report: HIGH severity for unresolved markers
@@ -59,16 +60,51 @@ $ARGUMENTS
    - Check for gaps in sequences
    - Report: LOW severity for gaps
 
-10. **Generate analysis report**
+10. **Review decision log (if exists)**
+    - Check `decisions.md` for unresolved (Proposed) decisions
+    - Verify affected documents reflect approved decisions
+    - Flag superseded decisions that weren't applied
+    - Report: HIGH for unapplied decisions, MEDIUM for stale entries
+
+11. **Devil's Advocate Challenge**
+    - Adopt the persona of a skeptical stakeholder
+    - Challenge 3 key assumptions in the PRD:
+      - "What if [assumption] is wrong?"
+      - "What evidence do we have for [claim]?"
+      - "Who loses if we ship this?"
+    - Surface uncomfortable questions the PM might be avoiding
+    - Report: No severity (advisory section)
+
+12. **Pre-Mortem Analysis**
+    - "It's 6 months after launch. This feature failed. Why?"
+    - Generate 3-5 plausible failure scenarios:
+      - Technical: What could break?
+      - Adoption: Why might users reject this?
+      - Business: What market/competitive shifts could undermine this?
+      - Execution: What could go wrong in delivery?
+    - For each scenario: likelihood (High/Med/Low) and mitigation
+    - Report: No severity (advisory section)
+
+13. **Stakeholder Stress Test**
+    - Evaluate PRD from adversarial perspectives:
+      - **Skeptical Engineering Lead**: "Is this technically feasible? What's underestimated?"
+      - **Cost-Conscious Executive**: "Is the ROI justified? What's the opportunity cost?"
+      - **Frustrated End User**: "Does this actually solve my problem? What's missing?"
+    - Surface potential objections before they arise in reviews
+    - Report: No severity (advisory section)
+
+14. **Generate analysis report**
     - Summarize findings by severity
     - Provide coverage statistics
+    - Include Devil's Advocate, Pre-Mortem, and Stress Test sections
     - List specific recommendations
     - Output to console (no file created)
 
-11. **Suggest next steps**
+15. **Suggest next steps**
     - If CRITICAL issues: must fix before proceeding
     - If HIGH issues: strongly recommend fixing
     - If only MEDIUM/LOW: can proceed with awareness
+    - If Pre-Mortem reveals high-likelihood risks: recommend adding mitigations to PRD
 
 ## Rules
 
@@ -100,6 +136,18 @@ $ARGUMENTS
 | Duplicate requirements | MEDIUM | Near-identical REQ entries |
 | Orphan work items | LOW | Task not mapped to requirement |
 | ID sequence gaps | LOW | Missing number in sequence |
+| Unapplied decision | HIGH | Approved decision not reflected in docs |
+| Stale decision log | MEDIUM | Decision marked Proposed for > 7 days |
+
+## Advisory Sections (No Severity)
+
+These sections don't block progress but surface risks and blind spots:
+
+| Section | Purpose |
+|---------|---------|
+| Devil's Advocate | Challenge assumptions, surface uncomfortable questions |
+| Pre-Mortem | Anticipate failure modes before they happen |
+| Stakeholder Stress Test | Preview objections from different perspectives |
 
 ## Report Format
 
@@ -144,6 +192,52 @@ $ARGUMENTS
 1. [Priority 1 action]
 2. [Priority 2 action]
 3. [Priority 3 action]
+
+---
+
+### 😈 Devil's Advocate
+
+> *Challenging assumptions you might be avoiding*
+
+| Assumption | Challenge | Evidence Gap |
+|------------|-----------|--------------|
+| [Key assumption from PRD] | What if this is wrong? | [What data would disprove this?] |
+| [Key assumption from PRD] | What if this is wrong? | [What data would disprove this?] |
+| [Key assumption from PRD] | What if this is wrong? | [What data would disprove this?] |
+
+**Uncomfortable Questions**:
+1. [Question the PM might not want to answer]
+2. [Question that challenges the core value prop]
+3. [Question about who might be harmed]
+
+---
+
+### 💀 Pre-Mortem: Why This Could Fail
+
+> *It's 6 months post-launch. This feature failed. Here's why:*
+
+| Failure Scenario | Category | Likelihood | Potential Mitigation |
+|------------------|----------|------------|---------------------|
+| [Scenario 1] | Technical / Adoption / Business / Execution | High/Med/Low | [What could prevent this] |
+| [Scenario 2] | Technical / Adoption / Business / Execution | High/Med/Low | [What could prevent this] |
+| [Scenario 3] | Technical / Adoption / Business / Execution | High/Med/Low | [What could prevent this] |
+
+**Highest Risk**: [The most likely failure mode and why it's concerning]
+
+---
+
+### 🎭 Stakeholder Stress Test
+
+**Skeptical Engineering Lead** 🔧
+> "[Specific objection about technical feasibility, timeline, or hidden complexity]"
+
+**Cost-Conscious Executive** 💰
+> "[Specific objection about ROI, resource allocation, or opportunity cost]"
+
+**Frustrated End User** 😤
+> "[Specific objection about whether this actually solves their real problem]"
+
+**Mitigation Notes**: [How to address these objections proactively]
 ```
 
 ## Example Interaction

@@ -166,6 +166,51 @@ PM Speckit is a specification-driven toolkit for Product Managers, adapting the 
 
 ---
 
+### CAP-010: Peer Review
+
+**Description**: Conduct an independent peer review of PRD documents using a different AI agent with fresh perspective.
+
+**User Story**: As a PM, I want an unbiased peer review from a senior PM perspective so that I can identify blind spots and improve document quality.
+
+**Acceptance Criteria**:
+- Requires switching to a different AI agent/model (enforced with warning)
+- Suggests recommended models for peer review (Claude Opus, GPT-4o, Gemini 1.5 Pro, o1)
+- Reviews all documents in feature folder with fresh context
+- Evaluates against 10 feedback categories:
+  1. Problem Clarity
+  2. Solution Fit
+  3. User Stories & Requirements
+  4. Scope & Boundaries
+  5. Success Metrics
+  6. Risk Assessment
+  7. Timeline & Feasibility
+  8. Strategic Alignment
+  9. Communication Quality
+  10. Launch Readiness
+- Generates `peer-review.md` with executive summary, category scores, and prioritized recommendations
+- Includes "Hard Questions" section with 3-5 challenging questions for the team
+- Can be used after `/pm.specify`, `/pm.prd`, or `/pm.analyze`
+
+---
+
+### CAP-011: Decision Logging
+
+**Description**: Capture and track post-approval decisions with traceability to affected documents.
+
+**User Story**: As a PM, I want to log decisions when they happen so that changes to approved PRDs are tracked and traceable.
+
+**Acceptance Criteria**:
+- Generates or appends to `decisions.md` in feature folder
+- Assigns unique decision IDs (DEC-001, DEC-002, etc.)
+- Captures: what changed, trigger, who requested, who approved, affected documents
+- Links decisions to specific document sections
+- Tracks decision states: Proposed → Approved → Applied
+- Supports modes: log new, review pending, mark applied, generate summary
+- Detects recent git changes and prompts for decision context
+- Flags when approved decisions haven't been applied to documents
+
+---
+
 ## Command Summary
 
 | Command | Creates | Description |
@@ -174,12 +219,13 @@ PM Speckit is a specification-driven toolkit for Product Managers, adapting the 
 | `/pm.specify` | `feature-overview.md` | Lightweight PRD for scoping |
 | `/pm.prd` | `prd.md` | Full PRD (incorporates feature overview) |
 | `/pm.clarify` | `clarifications.md` + updates source | Resolve open questions |
+| `/pm.decision` | `decisions.md` | Log post-approval changes with traceability |
 | `/pm.tasks` | `ado-workitems.md` | Generate Azure DevOps work items |
 | `/pm.analyze` | Console report | Cross-document consistency check |
+| `/pm.peer-review` | `peer-review.md` | Senior PM peer review (different agent) |
 | `/pm.docs` | `documentation.md` | Generate user documentation |
 | `/pm.blog` | `blog.md` | Generate blog post |
 | `/pm.demo` | `demo-script.md` | Generate demo script |
-| `/pm.learn` | Console (interactive) | Pause and learn any concept |
 
 ---
 
@@ -193,6 +239,7 @@ prds/[###-feature-name]/
 ├── prd.md                ← Created by /pm.prd (incorporates feature-overview)
 ├── clarifications.md     ← Created by /pm.clarify (session log)
 ├── ado-workitems.md      ← Created by /pm.tasks (parses prd.md)
+├── peer-review.md        ← Created by /pm.peer-review (requires different agent)
 ├── documentation.md      ← Created by /pm.docs (from prd.md)
 ├── blog.md               ← Created by /pm.blog (from prd.md)
 └── demo-script.md        ← Created by /pm.demo (from prd.md)
