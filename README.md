@@ -33,6 +33,7 @@ Inspired by [GitHub's spec-kit](https://github.com/github/spec-kit), adapted for
 | `/pm.docs` | Generate user documentation |
 | `/pm.blog` | Generate announcement blog post |
 | `/pm.demo` | Generate demo script |
+| `/pm.learn` | Pause and learn any concept |
 
 ## Workflow
 

@@ -179,6 +179,7 @@ PM Speckit is a specification-driven toolkit for Product Managers, adapting the 
 | `/pm.docs` | `documentation.md` | Generate user documentation |
 | `/pm.blog` | `blog.md` | Generate blog post |
 | `/pm.demo` | `demo-script.md` | Generate demo script |
+| `/pm.learn` | Console (interactive) | Pause and learn any concept |
 
 ---
 

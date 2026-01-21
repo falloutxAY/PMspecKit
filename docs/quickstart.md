@@ -229,6 +229,7 @@ When ready, create documentation, blog posts, or demo scripts:
 | `/pm.docs` | User documentation | `documentation.md` |
 | `/pm.blog` | Blog post | `blog.md` |
 | `/pm.demo` | Demo script | `demo-script.md` |
+| `/pm.learn` | Learn any concept | Interactive (no file) |
 
 ---
 

@@ -111,6 +111,7 @@ $ARGUMENTS
 | `/pm.docs` | `prd.md` | `prds/###-name/documentation.md` |
 | `/pm.blog` | `prd.md` | `prds/###-name/blog.md` |
 | `/pm.demo` | `prd.md` | `prds/###-name/demo-script.md` |
+| `/pm.learn` | Any context | Console (interactive) |
 
 ---
 
