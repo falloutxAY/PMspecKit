@@ -90,6 +90,10 @@ $ARGUMENTS
 └────────┬────────┘
          ↓
 ┌─────────────────┐
+│  /pm.workback   │ → Generates workback-schedule.md
+└────────┬────────┘    (Uses work items to estimate timeline)
+         ↓
+┌─────────────────┐
 │   /pm.analyze   │ ← Consistency validation (READ-ONLY)
 └────────┬────────┘
          ↓
@@ -112,6 +116,7 @@ $ARGUMENTS
 | `/pm.clarify` | Source document with `[NEEDS CLARIFICATION]` | `clarifications.md` + updates source |
 | `/pm.decision` | Any approved PRD documents | `prds/###-name/decisions.md` |
 | `/pm.tasks` | `prd.md` | `prds/###-name/ado-workitems.md` |
+| `/pm.workback` | `prd.md` (for target date) | `prds/###-name/workback-schedule.md` |
 | `/pm.analyze` | Any PRD documents | Console report (no files) |
 | `/pm.peer-review` | Any PRD documents + different agent | `prds/###-name/peer-review.md` |
 | `/pm.docs` | `prd.md` | `prds/###-name/documentation.md` |
@@ -130,6 +135,7 @@ $ARGUMENTS
 | `prd.md` | `/pm.prd` | `prd.md` |
 | `decisions.md` | `/pm.decision` | `decisions.md` |
 | `ado-workitems.md` | `/pm.tasks` | `ado-workitems.md` |
+| `workback-schedule.md` | `/pm.workback` | `workback-schedule.md` |
 | `documentation.md` | `/pm.docs` | `documentation.md` |
 | `blog.md` | `/pm.blog` | `blog.md` |
 | `demo-script.md` | `/pm.demo` | `demo-script.md` |
