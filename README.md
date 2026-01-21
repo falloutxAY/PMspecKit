@@ -32,6 +32,7 @@ Inspired by [GitHub's spec-kit](https://github.com/github/spec-kit), adapted for
 | `/pm.clarify` | Resolve open questions via Q&A |
 | `/pm.decision` | Log post-approval changes with traceability |
 | `/pm.tasks` | Generate Azure DevOps work items |
+| `/pm.workback` | Generate workback schedule from target launch date |
 | `/pm.analyze` | Validate consistency + devil's advocate + pre-mortem |
 | `/pm.peer-review` | Senior PM peer review with fresh perspective |
 | `/pm.docs` | Generate user documentation |
@@ -52,11 +53,11 @@ Choose the right level of process for your work:
 ```
 /pm.constitution (once per product)
         ↓
-/pm.specify → /pm.clarify → /pm.prd → /pm.tasks → /pm.analyze
-                    ↑                    ↑              ↓
-              /pm.peer-review ───────────┴───── /pm.peer-review
-                                                       ↓
-                                      /pm.docs, /pm.blog, /pm.demo
+/pm.specify → /pm.clarify → /pm.prd → /pm.tasks → /pm.workback → /pm.analyze
+                    ↑                    ↑              ↑              ↓
+              /pm.peer-review ───────────┴──────────────┴───── /pm.peer-review
+                                                                      ↓
+                                                     /pm.docs, /pm.blog, /pm.demo
 
     ┌─────────────────────────────────────────────────────────────┐
     │  /pm.decision ← Run anytime after PRD approval when:       │
@@ -82,6 +83,7 @@ When I use /pm.* commands, follow the templates in PM-Speckit:
 - /pm.clarify → templates/commands/clarify.md
 - /pm.decision → templates/commands/decision.md
 - /pm.tasks → templates/commands/tasks.md
+- /pm.workback → templates/commands/workback.md
 - /pm.analyze → templates/commands/analyze.md
 - /pm.peer-review → templates/commands/peer-review.md
 - /pm.docs → templates/commands/docs.md
@@ -105,6 +107,7 @@ PM-Speckit/
 │   ├── prd.md               # Full PRD template
 │   ├── decisions.md         # Decision log for change tracking
 │   ├── ado-workitems.md     # Azure DevOps work items
+│   ├── workback-schedule.md # Implementation timeline planning
 │   ├── documentation.md     # User docs template
 │   ├── blog.md              # Blog post template
 │   ├── demo-script.md       # Demo script template
