@@ -1,8 +1,6 @@
 ---
 description: Generate workback schedule from target launch date for implementation planning
 handoffs:
-  - agent: /pm.tasks
-    prompt: Generate work items to populate the schedule phases
   - agent: /pm.analyze
     prompt: Validate timeline assumptions and dependency logic
 ---
@@ -100,7 +98,7 @@ $ARGUMENTS
     - Recommend scope adjustments if needed
 
 13. **Suggest next steps**
-    - Run `/pm.tasks` if work items not yet created
+    - Run `/pm.analyze` to validate timeline assumptions
     - Schedule stakeholder review meetings
     - Set up weekly status tracking cadence
 
