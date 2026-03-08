@@ -211,6 +211,25 @@ PM Speckit is a specification-driven toolkit for Product Managers, adapting the 
 
 ---
 
+### CAP-012: Workback Schedule
+
+**Description**: Generate implementation timeline by working backwards from target launch date.
+
+**User Story**: As a PM, I want to create a workback schedule so that the team has clear milestones and realistic delivery dates.
+
+**Acceptance Criteria**:
+- Generates `workback-schedule.md` in feature folder
+- Calculates timeline working backwards from target launch date
+- Includes key milestones: PRD approval, design review, dev complete, testing, staging, launch
+- Defines dependencies between milestones
+- Allocates buffer/contingency based on complexity and risk
+- Includes stakeholder review checkpoints at each phase transition
+- Identifies critical path items vs. parallel tracks
+- Provides timeline confidence assessment and risk mitigation
+- Integrates with PRD timeline section and work items
+
+---
+
 ## Command Summary
 
 | Command | Creates | Description |
@@ -221,6 +240,7 @@ PM Speckit is a specification-driven toolkit for Product Managers, adapting the 
 | `/pm.clarify` | `clarifications.md` + updates source | Resolve open questions |
 | `/pm.decision` | `decisions.md` | Log post-approval changes with traceability |
 | `/pm.tasks` | `ado-workitems.md` | Generate Azure DevOps work items |
+| `/pm.workback` | `workback-schedule.md` | Generate workback schedule from target launch date |
 | `/pm.analyze` | Console report | Cross-document consistency check |
 | `/pm.peer-review` | `peer-review.md` | Senior PM peer review (different agent) |
 | `/pm.docs` | `documentation.md` | Generate user documentation |
@@ -239,6 +259,7 @@ prds/[###-feature-name]/
 ├── prd.md                ← Created by /pm.prd (incorporates feature-overview)
 ├── clarifications.md     ← Created by /pm.clarify (session log)
 ├── ado-workitems.md      ← Created by /pm.tasks (parses prd.md)
+├── workback-schedule.md  ← Created by /pm.workback (timeline from prd.md)
 ├── peer-review.md        ← Created by /pm.peer-review (requires different agent)
 ├── documentation.md      ← Created by /pm.docs (from prd.md)
 ├── blog.md               ← Created by /pm.blog (from prd.md)
